@@ -1,0 +1,70 @@
+JSX 문법
+함수형 컴포넌트, 클래스형 컴포넌트
+Hook : useState, useMemo, useCallback
+let a = 10; => 값이 바뀌어도 rerendering은 되지 않음
+let [a] = useState(); => 구조분해 할당
+=> 리액트에서 변수 선언시 무조건 useState를 사용한다고 보면 된다
+=> 값이 바뀌면 rerendering 된다.
+
+부모 컴포넌트 => App()
+자식 컴포넌트 
+
+<Board 글제목 = {글제목}/>
+App() - Board(props)
+
+1. UI 생성(HTML, CSS) 컴포넌트 내에서 return(<>)
+2. state 조작
+3. 모듈화(컴포넌트화) - propsf
+
+_________________________________________________
+
+src 폴더 안에 있는 것들은 private영역 =>
+import를 통해서 접근 가능
+- 이미지 같은 경우 public에 넣고 관리해줘도 괜춘
+
+_________________________________________________
+
+object 자료형 => {}로 시작하는데 []로 묶여 있음
+[{},{},{}]=>
+array 형태로 되어 있고 배열안에 object자료형이 3개 존재 
+
+여러 자료를 한 곳에서 관리 => 오브젝트, 배열
+여러 자료형은 오브젝트로 묶고 => {}
+- 오브젝트형은 키를 통해서 참조하기 때문에 키값이 필요
+- 접근시 b.name
+
+오브젝트라는 3개의 같은 유형은 배열로 묶음 => []
+- 배열은 인덱스로 접근하기 때문에 키 값이 필요 없음
+- 접근시 a[0]
+_________________________________________________
+
+* 리액트 미사용시 일반적으로 데이터를 요청하는 처리 순서
+
+* request
+상세페이지 /detail =>을 요청해서 처리하는 것을 라우팅이라 함
+장바구니 페이지 /cart => 요청을 하면 1번
+
+* response
+1. 상세 페이지 파일 : detail.html 파일을 만들어놓고 => 클라이언트 쪽에 요청을 하기 되는 것
+2. 2번 장바구니 페이지 파일 : cart.html 파일 
+
+클라이언트 : request 하면(detail 형태로) ---> 서버 :  response (만들어져 있는 detail.html를 줌)
+_________________________________________________
+
+* 리액트사용시
+1. 컴포넌트를 만들어서 컴포넌트에 상세페이지 내용 채움
+   - 상세페이지   /detail request
+
+2. 해당 상세페이지 컴포넌트 보여줌~
+
+* 라우터 설치
+npm install react-router-dom@6
+
+* 라우터 설정 => index.js에서 
+import { BrowserRouter } from 'react-router-dom'; 후에
+
+<BrowserRouter>
+      <App />
+</BrowserRouter>최상위 컴포넌트인 App을 감싸준다.
+
+App.js에서 import { Route, Routes, Link } from 'react-router-dom'; 추가
