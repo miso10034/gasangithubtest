@@ -1,2 +1,2 @@
-console.log("목요일")
-console.log("D-day 17")
+console.log("금요일이다");
+console.log("오두비");
